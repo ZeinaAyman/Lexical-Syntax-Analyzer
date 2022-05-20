@@ -1,4 +1,18 @@
-input =' int x = 5'
+from pydoc import isdata
+import re
 
-def tokenizer():
-    
+
+tokens=[]
+input =' int x = 5'.split()
+
+
+
+def isDatatype():
+    for word in input:
+        if word in ['int','double','string']:
+            tokens.append(['DATATYPE', word])
+    return tokens
+
+if __name__ == '__main__':
+
+    print(isDatatype())
