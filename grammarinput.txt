@@ -1,8 +1,8 @@
 E -> TA
 A -> +TA
-A -> e
+A -> 
 T -> FB
 B -> *FB
-B -> e
+B -> 
 F -> (E)
 F -> id

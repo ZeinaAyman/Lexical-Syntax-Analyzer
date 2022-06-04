@@ -38,13 +38,13 @@ def follow_set(G,S,T,Nt):
             for i in range(len(rhs)):
                 Ai = rhs[i]
                 if Ai in Nt:
-                    if i+1 == len(rhs): w = 'e'
+                    if i+1 == len(rhs): w = ''
                     else: w = rhs[i+1]
-                    if w == '' or (w in Nt and 'e' in first_set_list[w]):
+                    if w == '' or (w in Nt and '' in first_set_list[w]):
                         for k in followA[Aj]: add(tempA[Ai],k)
                     if w in T: add(tempA[Ai],w)
                     if w in Nt:
-                        for k in first_set_list[w]: add(tempA[Ai],k) if k!='e' else add(tempA[Ai],'$')
+                        for k in first_set_list[w]: add(tempA[Ai],k) if k!='' else add(tempA[Ai],'$')
             flag = True
         for NonT in Nt: flag = flag and (tempA[NonT] == followA[NonT])
         if flag: break
@@ -122,7 +122,7 @@ def predictive_parsing(M,T):
     stack,post = [],''
 def driver():
     global stack,post
-    fileHandle = open('grammarinput2.txt')
+    fileHandle = open('grammarinput.txt')
     G,T,Nt = import_grammar(fileHandle)
     pprint(G)
     print (T,Nt)
