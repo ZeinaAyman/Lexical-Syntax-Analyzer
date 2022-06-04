@@ -122,7 +122,7 @@ def predictive_parsing(M,T):
     stack,post = [],''
 def driver():
     global stack,post
-    fileHandle = open('grammarinput.txt')
+    fileHandle = open('grammarinput2.txt')
     G,T,Nt = import_grammar(fileHandle)
     pprint(G)
     print (T,Nt)
